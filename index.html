@@ -67,7 +67,7 @@
   </header>
 
   <!-- Section Projeto -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
     <h2 class="w3-text-light-grey"><strong>Violência contra <span class="w3-text-red">MULHERES NEGRAS</span></strong></h2>
     <hr style="width:200px" class="w3-opacity">
     <h4 class="w3-center"><strong>Olá, tudo bem?</strong> <br> Sintam-se acolhidos neste ambiente virtual que objetiva divulgar informações de credibilidade, assegurada pelas evidências científicas e métricas estatísticas.</h4>
@@ -82,31 +82,36 @@
   </div>
     
   <!-- Section Gráficos -->
-  <div class="w3-padding-64 w3-content" id="photos">
+  <div class="w3-padding-24 w3-content" id="photos">
     <h2 class="w3-text-light-grey">Gráficos por cidade da REGIÃO METROPOLITANA</h2>
     <hr style="width:200px" class="w3-opacity">
 
-    <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-        <img src="/w3images/wedding.jpg" style="width:100%">
-        <img src="/w3images/rocks.jpg" style="width:100%">
-        <img src="/w3images/sailboat.jpg" style="width:100%">
+    <!-- Slideshow -->
+  <div class="w3-container w3-white">
+    
+    <div class="w3-display-container w3-center mySlides">
+      <div>
+        <span class="w3-white w3-padding-large">Estado do ESPÍRITO SANTO</span>
       </div>
-
-      <div class="w3-half">
-        <img src="/w3images/underwater.jpg" style="width:100%">
-        <img src="/w3images/chef.jpg" style="width:100%">
-        <img src="/w3images/wedding.jpg" style="width:100%">
-        <img src="/w3images/p6.jpg" style="width:100%">
-      </div>
-    <!-- End photo grid -->
+      <img src="./imagens/homicidios-mulheres-percentual-estadoES.png" style="width: 65%">     
     </div>
-  <!-- End Portfolio Section -->
+    
+    <div class="w3-display-container w3-center mySlides">
+      <div>
+        <span class="w3-white w3-padding-large">VITÓRIA</span>
+      </div>
+      <img src="./imagens/homicidios-mulheres-percentual-estadoES.png" style="width: 65%">     
+    </div>
+
+    <!-- Slideshow next/previous buttons -->
+    <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
+      <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
+      <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
+    </div>
   </div>
 
   <!-- Section Contatos -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+  <div class="w3-padding-32 w3-content w3-text-grey" id="contact">
     <h2 class="w3-text-light-grey">Contatos</h2>
     <hr style="width:200px" class="w3-opacity">
 
@@ -136,6 +141,36 @@
     <p class="w3-medium">Este site foi desenvolvido para permitir a divulgação dos resultados do Projeto de Extensão e Inovação Interdisciplinar do curso de Análise e Desenvolvimento de Sistemas da Faculdade MULTIVIX Serra.</P>
     <p class="w3-center w3-medium">&copy 2023 Copyright: <a class="w3-hover-text-red" href="https://github.com/priscilacezana" target="_blank" style="text-decoration: none;">Priscila Cezana</a></p>  
   </footer>
+  
+  <script>
+    // Slideshow
+    var slideIndex = 1;
+    showDivs(slideIndex);
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+    
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demodots");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length} ;
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" w3-white", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " w3-white";
+    }
+    </script>
 
 </body>
 </html>
